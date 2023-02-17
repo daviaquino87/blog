@@ -3,7 +3,7 @@ import { User } from "../../models/User";
 import { IUserRepository } from "../interface/IUserRepository";
 
 export class UserRepositoryInMemory implements IUserRepository {
-  private users: User[];
+  public users: User[];
   constructor() {
     this.users = [];
   }
