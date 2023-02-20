@@ -2,6 +2,7 @@ import { PostRepositoryInMemory } from "../../repositories/in-memory/PostReposit
 import { CreatePostUseCase } from "../createPost/CreatePostUseCase";
 import { ListPostsUseCase } from "./ListPostsUseCase";
 import { postBuilder } from "../../repositories/in-memory/seed/PostSeed";
+import { Post } from "../../models/Post";
 
 var postRepositoryInMemory: PostRepositoryInMemory;
 var listPostUseCase: ListPostsUseCase;
@@ -23,5 +24,8 @@ describe("Post", () => {
 
     expect(Array.isArray(posts)).toBe(true);
     expect(posts[0].userId).toEqual(faker.shift().userId);
+    posts.forEach((post) => {
+      expect(post instanceof Post).toBe(true);
+    });
   });
 });
