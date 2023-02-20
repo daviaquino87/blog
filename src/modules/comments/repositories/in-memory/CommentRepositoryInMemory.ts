@@ -2,6 +2,7 @@ import { ICommentRepository } from "../interface/ICommentRepository";
 import { ICreateCommentDTO } from "../../dtos/ICreateCommentDTO";
 import { Comment } from "../../models/Comment";
 import { IUpdateCommentDTO } from "../../dtos/IUpdateCommentDTO";
+import { AppError } from "../../../../shared/error/AppError";
 
 export class CommentRepositoryInMemory implements ICommentRepository {
   public comments: Comment[];
@@ -34,7 +35,14 @@ export class CommentRepositoryInMemory implements ICommentRepository {
     comment.text = text;
   }
 
-  removeComment(): Promise<void> {
-    throw new Error("Method not implemented.");
+  async removeComment(userId: string, commentId: string): Promise<void> {
+    const index = this.comments.findIndex(
+      (comment) => comment.userId === userId && comment.id === commentId
+    );
+    if (index < 0) {
+      throw new AppError("You can only remove your comment");
+    }
+
+    this.comments.splice(index, 1);
   }
 }

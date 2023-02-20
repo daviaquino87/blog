@@ -1,5 +1,5 @@
-import { Comment } from "../../models/Comment";
 import { ICommentRepository } from "../../repositories/interface/ICommentRepository";
+import { Comment } from "../../models/Comment";
 
 export class ListCommentsUseCase {
   constructor(private commentsRepository: ICommentRepository) {}
