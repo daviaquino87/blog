@@ -3,7 +3,7 @@ import { ICommentRepository } from "../../repositories/interface/ICommentReposit
 
 export class CreateCommentUseCase {
   constructor(private commentRepository: ICommentRepository) {}
-  async execute({ userId, text }: ICommentDTO) {
-    await this.commentRepository.create({ userId, text });
+  async execute({ userId, postId, text }: ICommentDTO) {
+    await this.commentRepository.create({ userId, postId, text });
   }
 }

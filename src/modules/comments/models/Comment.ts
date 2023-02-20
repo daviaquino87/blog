@@ -3,6 +3,7 @@ import { randomUUID } from "node:crypto";
 
 interface ICommentProps {
   userId: string;
+  postId: string;
   text: string;
   created_at: Date;
 }
@@ -29,6 +30,14 @@ export class Comment {
 
   public get userId(): string {
     return this.props.userId;
+  }
+
+  public set postId(uuid: string) {
+    this.props.postId = uuid;
+  }
+
+  public get postId(): string {
+    return this.props.postId;
   }
 
   public set text(text: string) {

@@ -9,9 +9,10 @@ export class CommentRepositoryInMemory implements ICommentRepository {
     this.comments = [];
   }
 
-  async create({ userId, text }: ICommentDTO): Promise<void> {
+  async create({ userId, postId, text }: ICommentDTO): Promise<void> {
     const comment = new Comment({
       userId,
+      postId,
       text,
     });
 
