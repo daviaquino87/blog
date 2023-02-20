@@ -23,8 +23,18 @@ export class CommentRepositoryInMemory implements ICommentRepository {
     return this.comments;
   }
 
+  async findCommentUser(userId: string, commentId: string): Promise<Comment> {
+    return this.comments.find(
+      (comment) => comment.userId === userId && comment.id === commentId
+    );
+  }
+
   async updateComment({ id, text }: IUpdateCommentDTO): Promise<void> {
     let comment = this.comments.find((comment) => comment.id === id);
     comment.text = text;
+  }
+
+  removeComment(): Promise<void> {
+    throw new Error("Method not implemented.");
   }
 }
