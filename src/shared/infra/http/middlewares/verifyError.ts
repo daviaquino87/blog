@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { AppError } from "shared/error/AppError";
+import { AppError } from "../../../error/AppError";
 
 export const verifyError = (
   error: Error,

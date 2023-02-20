@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "dev": "tsnd src/shared/infra/http/server.ts"
+    "dev": "tsnd src/shared/infra/http/server.ts",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",

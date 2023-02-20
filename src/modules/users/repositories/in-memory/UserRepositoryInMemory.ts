@@ -1,4 +1,4 @@
-import { IUserDTO } from "modules/users/dtos/IUserDTO";
+import { IUserDTO } from "../../dtos/IUserDTO";
 import { User } from "../../models/User";
 import { IUserRepository } from "../interface/IUserRepository";
 
