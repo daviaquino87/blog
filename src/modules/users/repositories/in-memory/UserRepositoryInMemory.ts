@@ -7,6 +7,7 @@ export class UserRepositoryInMemory implements IUserRepository {
   constructor() {
     this.users = [];
   }
+
   async create({ name, email, password }: IUserDTO): Promise<void> {
     const user = new User({
       name,
@@ -15,5 +16,9 @@ export class UserRepositoryInMemory implements IUserRepository {
     });
 
     this.users.push(user);
+  }
+
+  async findByEmail(email: string): Promise<User> {
+    return this.users.find((user) => user.email === email);
   }
 }
