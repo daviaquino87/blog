@@ -4,5 +4,5 @@ import { IPostDTO } from "../../../dtos/IPostDTO";
 export const postBuilder = createBuilder<IPostDTO>((faker) => ({
   userId: faker.random.uuid(),
   title: faker.name.jobTitle(),
-  content: faker.random.words(),
+  content: faker.random.words(12),
 }));

@@ -4,7 +4,7 @@ import { IPostDTO } from "../../dtos/IPostDTO";
 import { Post } from "../../models/Post";
 
 export class PostRepositoryInMemory implements IPostRepository {
-  private posts: Post[];
+  public posts: Post[];
   constructor() {
     this.posts = [];
   }
