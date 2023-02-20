@@ -7,7 +7,7 @@ import { AppError } from "../../../../shared/error/AppError";
 export class CreateUserUseCase {
   constructor(private userRepository: IUserRepository) {}
 
-  async execute({ name, email, password }: IUserDTO) {
+  async execute({ name, email, password }: IUserDTO): Promise<void> {
     const emailAlreadyExists = await this.userRepository.findByEmail(email);
 
     if (emailAlreadyExists) {
