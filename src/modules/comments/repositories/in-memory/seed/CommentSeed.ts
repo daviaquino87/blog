@@ -1,7 +1,7 @@
 import { createBuilder } from "fluentbuilder";
-import { ICommentDTO } from "../../../dtos/ICommentDTO";
+import { ICreateCommentDTO } from "../../../dtos/ICreateCommentDTO";
 
-export const commentBuilder = createBuilder<ICommentDTO>((faker) => ({
+export const commentBuilder = createBuilder<ICreateCommentDTO>((faker) => ({
   userId: faker.random.uuid(),
   postId: faker.random.uuid(),
   text: faker.lorem.paragraph(),
