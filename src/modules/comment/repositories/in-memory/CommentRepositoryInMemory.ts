@@ -2,7 +2,7 @@ import { ICommentRepository } from "../interface/ICommentRepository";
 import { ICommentDTO } from "../../dtos/ICommentDTO";
 import { Comment } from "../../models/Comment";
 
-export class CommentRepository implements ICommentRepository {
+export class CommentRepositoryInMemory implements ICommentRepository {
   public comments: Comment[];
 
   constructor() {

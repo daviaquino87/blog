@@ -2,7 +2,6 @@ import { PostRepositoryInMemory } from "../../repositories/in-memory/PostReposit
 import { CreatePostUseCase } from "../createPost/CreatePostUseCase";
 import { ListPostsUseCase } from "./ListPostsUseCase";
 import { postBuilder } from "../../repositories/in-memory/seed/PostSeed";
-import { Post } from "../../models/Post";
 
 var postRepositoryInMemory: PostRepositoryInMemory;
 var listPostUseCase: ListPostsUseCase;
