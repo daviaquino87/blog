@@ -39,9 +39,6 @@ export class CommentRepositoryInMemory implements ICommentRepository {
     const index = this.comments.findIndex(
       (comment) => comment.userId === userId && comment.id === commentId
     );
-    if (index < 0) {
-      throw new AppError("You can only remove your comment");
-    }
 
     this.comments.splice(index, 1);
   }
