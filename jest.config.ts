@@ -5,6 +5,7 @@ export default {
   bail: true,
   clearMocks: true,
   coverageProvider: "v8",
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
     prefix: "<rootDir>/src/",
   }),

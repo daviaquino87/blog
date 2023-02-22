@@ -1,11 +1,15 @@
+import { inject, injectable } from "tsyringe";
 import { IUserRepository } from "@modules/users/repositories/interface/IUserRepository";
 import { ICreateUserDTO } from "@modules/users/dtos/ICreateUserDTO";
 
 import { hash } from "bcrypt";
 import { AppError } from "@errors/AppError";
 
+@injectable()
 export class CreateUserUseCase {
-  constructor(private userRepository: IUserRepository) {}
+  constructor(
+    @inject("userRepository") private userRepository: IUserRepository
+  ) {}
 
   async execute({ name, email, password }: ICreateUserDTO): Promise<void> {
     const emailAlreadyExists = await this.userRepository.findByEmail(email);

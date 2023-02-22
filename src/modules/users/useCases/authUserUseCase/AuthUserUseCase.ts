@@ -3,6 +3,7 @@ import { IAuthUserDTO } from "@modules/users/dtos/IAuthUserDTO";
 import { compare } from "bcrypt";
 import { AppError } from "@errors/AppError";
 import { sign } from "jsonwebtoken";
+import { inject, injectable } from "tsyringe";
 
 interface IResponse {
   user: {
@@ -11,9 +12,11 @@ interface IResponse {
   };
   token: string;
 }
-
+@injectable()
 export class AuthUserUseCase {
-  constructor(private userRepository: IUserRepository) {}
+  constructor(
+    @inject("userRepository") private userRepository: IUserRepository
+  ) {}
   async execute({ email, password }: IAuthUserDTO): Promise<IResponse> {
     const user = await this.userRepository.findByEmail(email);
 
