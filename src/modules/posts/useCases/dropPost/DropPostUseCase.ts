@@ -1,5 +1,5 @@
-import { AppError } from "../../../../shared/error/AppError";
 import { IPostRepository } from "../../repositories/interface/IPostRepository";
+import { AppError } from "../../../../shared/error/AppError";
 
 interface IRequest {
   userId: string;

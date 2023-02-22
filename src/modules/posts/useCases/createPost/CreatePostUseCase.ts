@@ -1,5 +1,5 @@
-import { ICreatePostDTO } from "../../dtos/ICreatePostDTO";
 import { IPostRepository } from "../../repositories/interface/IPostRepository";
+import { ICreatePostDTO } from "../../dtos/ICreatePostDTO";
 
 export class CreatePostUseCase {
   constructor(private postRepository: IPostRepository) {}

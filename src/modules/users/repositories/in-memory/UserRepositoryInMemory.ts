@@ -1,6 +1,6 @@
+import { IUserRepository } from "../interface/IUserRepository";
 import { IUserDTO } from "../../dtos/IUserDTO";
 import { User } from "../../models/User";
-import { IUserRepository } from "../interface/IUserRepository";
 
 export class UserRepositoryInMemory implements IUserRepository {
   public users: User[];
