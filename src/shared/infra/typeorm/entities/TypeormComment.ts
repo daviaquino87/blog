@@ -8,7 +8,7 @@ import {
 import { TypeormUser } from "./TypeormUser";
 import { TypeormPost } from "./TypeormPost";
 
-@Entity()
+@Entity("comments")
 export class TypeormComment {
   @PrimaryGeneratedColumn("uuid")
   id: string;

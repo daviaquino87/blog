@@ -1,6 +1,8 @@
 import "reflect-metadata";
 import "dotenv/config";
 import "express-async-errors";
+import "../typeorm";
+
 import express from "express";
 
 import { indexRouter } from "@shared/infra/http/routes/index.routes";
