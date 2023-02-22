@@ -1,5 +1,5 @@
-import { ICommentRepository } from "../../repositories/interface/ICommentRepository";
-import { ICreateCommentDTO } from "../../dtos/ICreateCommentDTO";
+import { ICommentRepository } from "@modules/comments/repositories/interface/ICommentRepository";
+import { ICreateCommentDTO } from "@modules/comments/dtos/ICreateCommentDTO";
 
 export class CreateCommentUseCase {
   constructor(private commentRepository: ICommentRepository) {}

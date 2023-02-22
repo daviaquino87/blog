@@ -1,8 +1,8 @@
-import { PostRepositoryInMemory } from "../../repositories/in-memory/PostRepositoryInMemory";
+import { PostRepositoryInMemory } from "@modules/posts/repositories/in-memory/PostRepositoryInMemory";
 import { CreatePostUseCase } from "../createPost/CreatePostUseCase";
 import { ListPostsUseCase } from "./ListPostsUseCase";
-import { postBuilder } from "../../repositories/in-memory/seed/PostSeed";
-import { Post } from "../../models/Post";
+import { postBuilder } from "@modules/posts/repositories/in-memory/seed/PostSeed";
+import { Post } from "@modules/posts/models/Post";
 
 var postRepositoryInMemory: PostRepositoryInMemory;
 var listPostUseCase: ListPostsUseCase;

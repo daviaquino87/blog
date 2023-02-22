@@ -1,5 +1,5 @@
 import { createBuilder } from "fluentbuilder";
-import { ICreatePostDTO } from "../../../dtos/ICreatePostDTO";
+import { ICreatePostDTO } from "@modules/posts/dtos/ICreatePostDTO";
 
 export const postBuilder = createBuilder<ICreatePostDTO>((faker) => ({
   userId: faker.random.uuid(),

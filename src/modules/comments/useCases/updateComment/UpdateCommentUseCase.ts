@@ -1,7 +1,7 @@
-import { ICommentRepository } from "../../repositories/interface/ICommentRepository";
-import { IUpdateCommentDTO } from "../../dtos/IUpdateCommentDTO";
+import { ICommentRepository } from "@modules/comments/repositories/interface/ICommentRepository";
+import { IUpdateCommentDTO } from "@modules/comments/dtos/IUpdateCommentDTO";
 
-import { AppError } from "../../../../shared/error/AppError";
+import { AppError } from "@errors/AppError";
 
 export class UpdateCommentUseCase {
   constructor(private commentsRepository: ICommentRepository) {}

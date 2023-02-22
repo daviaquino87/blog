@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "dev": "tsnd src/shared/infra/http/server.ts",
+    "dev": "tsnd -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/server.ts",
     "build": "tsc"
   },
   "keywords": [],
@@ -27,6 +27,7 @@
     "@types/jest": "^29.4.0",
     "fluentbuilder": "^2.1.0",
     "jest": "^29.4.3",
-    "ts-jest": "^29.0.5"
+    "ts-jest": "^29.0.5",
+    "tsconfig-paths": "^4.1.2"
   }
 }

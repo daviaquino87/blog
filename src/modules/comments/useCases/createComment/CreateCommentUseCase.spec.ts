@@ -1,6 +1,6 @@
-import { CommentRepositoryInMemory } from "../../repositories/in-memory/CommentRepositoryInMemory";
+import { CommentRepositoryInMemory } from "@modules/comments/repositories/in-memory/CommentRepositoryInMemory";
 import { CreateCommentUseCase } from "./CreateCommentUseCase";
-import { commentBuilder } from "../../repositories/in-memory/seed/CommentSeed";
+import { commentBuilder } from "@modules/comments/repositories/in-memory/seed/CommentSeed";
 
 var commentRepositoryInMemory: CommentRepositoryInMemory;
 var createCommentUseCase: CreateCommentUseCase;

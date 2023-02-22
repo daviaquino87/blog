@@ -1,7 +1,7 @@
 import { createBuilder } from "fluentbuilder";
-import { IUserDTO } from "../../../dtos/IUserDTO";
+import { ICreateUserDTO } from "@modules/users/dtos/ICreateUserDTO";
 
-export const userBuilder = createBuilder<IUserDTO>((faker) => ({
+export const userBuilder = createBuilder<ICreateUserDTO>((faker) => ({
   name: faker.name.findName(),
   email: faker.internet.email(),
   password: faker.random.words(),

@@ -3,14 +3,21 @@
     "target": "es5",
     "module": "commonjs",
     "outDir": "./dist",
+    "baseUrl": "./src",
     "esModuleInterop": true,
     "strict": true,
     "skipLibCheck": true,
-    "resolveJsonModule": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "forceConsistentCasingInFileNames": true,
     "strictPropertyInitialization": false,
-    "strictNullChecks": false
+    "strictNullChecks": false,
+    "resolveJsonModule": true,
+    "paths": {
+      "@modules/*": ["modules/*"],
+      "@shared/*": ["shared/*"],
+      "@errors/*": ["errors/*"],
+      "@helpers/*": ["helpers/*"]
+    }
   }
 }

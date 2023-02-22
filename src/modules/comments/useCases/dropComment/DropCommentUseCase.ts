@@ -1,5 +1,5 @@
-import { ICommentRepository } from "../../repositories/interface/ICommentRepository";
-import { AppError } from "../../../../shared/error/AppError";
+import { ICommentRepository } from "@modules/comments/repositories/interface/ICommentRepository";
+import { AppError } from "@errors/AppError";
 
 interface IRequest {
   userId: string;

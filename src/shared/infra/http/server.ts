@@ -2,8 +2,8 @@ import "dotenv/config";
 import "express-async-errors";
 import express from "express";
 
-import { indexRouter } from "./routes/index.routes";
-import { verifyError } from "./middlewares/verifyError";
+import { indexRouter } from "@shared/infra/http/routes/index.routes";
+import { verifyError } from "@shared/infra/http/middlewares/verifyError";
 
 const app = express();
 

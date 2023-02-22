@@ -1,6 +1,6 @@
 import { IUserRepository } from "../interface/IUserRepository";
-import { IUserDTO } from "../../dtos/IUserDTO";
-import { User } from "../../models/User";
+import { ICreateUserDTO } from "@modules/users/dtos/ICreateUserDTO";
+import { User } from "@modules/users/models/User";
 
 export class UserRepositoryInMemory implements IUserRepository {
   public users: User[];
@@ -8,7 +8,7 @@ export class UserRepositoryInMemory implements IUserRepository {
     this.users = [];
   }
 
-  async create({ name, email, password }: IUserDTO): Promise<void> {
+  async create({ name, email, password }: ICreateUserDTO): Promise<void> {
     const user = new User({
       name,
       email,

@@ -1,6 +1,6 @@
-import { IPostRepository } from "../../repositories/interface/IPostRepository";
-import { IUpdatePostDTO } from "../../dtos/IUpdatePostDTO";
-import { AppError } from "../../../../shared/error/AppError";
+import { IPostRepository } from "@modules/posts/repositories/interface/IPostRepository";
+import { IUpdatePostDTO } from "@modules/posts/dtos/IUpdatePostDTO";
+import { AppError } from "@errors/AppError";
 
 export class UpdatePostUseCase {
   constructor(private postRepository: IPostRepository) {}

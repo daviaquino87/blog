@@ -1,8 +1,8 @@
-import { UserRepositoryInMemory } from "../../repositories/in-memory/UserRepositoryInMemory";
+import { UserRepositoryInMemory } from "@modules/users/repositories/in-memory/UserRepositoryInMemory";
 import { CreateUserUseCase } from "./CreateUserUseCase";
 
-import { userBuilder } from "../../repositories/in-memory/seed/UserSeed";
-import { AppError } from "../../../../shared/error/AppError";
+import { userBuilder } from "@modules/users/repositories/in-memory/seed/UserSeed";
+import { AppError } from "@errors/AppError";
 
 var userRepositoryInMemory: UserRepositoryInMemory;
 var createUserUseCase: CreateUserUseCase;

@@ -1,7 +1,7 @@
 import { IPostRepository } from "../interface/IPostRepository";
-import { ICreatePostDTO } from "../../dtos/ICreatePostDTO";
-import { IUpdatePostDTO } from "../../dtos/IUpdatePostDTO";
-import { Post } from "../../models/Post";
+import { ICreatePostDTO } from "@modules/posts/dtos/ICreatePostDTO";
+import { IUpdatePostDTO } from "@modules/posts/dtos/IUpdatePostDTO";
+import { Post } from "@modules/posts/models/Post";
 
 export class PostRepositoryInMemory implements IPostRepository {
   public posts: Post[];

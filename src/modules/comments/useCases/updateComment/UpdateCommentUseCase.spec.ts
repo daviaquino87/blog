@@ -1,8 +1,8 @@
-import { CommentRepositoryInMemory } from "../../repositories/in-memory/CommentRepositoryInMemory";
+import { CommentRepositoryInMemory } from "@modules/comments/repositories/in-memory/CommentRepositoryInMemory";
 import { CreateCommentUseCase } from "../createComment/CreateCommentUseCase";
 import { UpdateCommentUseCase } from "./UpdateCommentUseCase";
-import { commentBuilder } from "../../repositories/in-memory/seed/CommentSeed";
-import { AppError } from "../../../../shared/error/AppError";
+import { commentBuilder } from "@modules/comments/repositories/in-memory/seed/CommentSeed";
+import { AppError } from "@errors/AppError";
 
 var commentRepositoryInMemory: CommentRepositoryInMemory;
 var createCommentuseCase: CreateCommentUseCase;

@@ -1,7 +1,7 @@
-import { ICommentRepository } from "../interface/ICommentRepository";
-import { ICreateCommentDTO } from "../../dtos/ICreateCommentDTO";
-import { IUpdateCommentDTO } from "../../dtos/IUpdateCommentDTO";
-import { Comment } from "../../models/Comment";
+import { ICommentRepository } from "@modules/comments/repositories/interface/ICommentRepository";
+import { ICreateCommentDTO } from "@modules/comments/dtos/ICreateCommentDTO";
+import { IUpdateCommentDTO } from "@modules/comments/dtos/IUpdateCommentDTO";
+import { Comment } from "@modules/comments/models/Comment";
 
 export class CommentRepositoryInMemory implements ICommentRepository {
   public comments: Comment[];

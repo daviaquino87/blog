@@ -1,13 +1,13 @@
-import { IUserRepository } from "../../repositories/interface/IUserRepository";
-import { IUserDTO } from "../../../users/dtos/IUserDTO";
+import { IUserRepository } from "@modules/users/repositories/interface/IUserRepository";
+import { ICreateUserDTO } from "@modules/users/dtos/ICreateUserDTO";
 
 import { hash } from "bcrypt";
-import { AppError } from "../../../../shared/error/AppError";
+import { AppError } from "@errors/AppError";
 
 export class CreateUserUseCase {
   constructor(private userRepository: IUserRepository) {}
 
-  async execute({ name, email, password }: IUserDTO): Promise<void> {
+  async execute({ name, email, password }: ICreateUserDTO): Promise<void> {
     const emailAlreadyExists = await this.userRepository.findByEmail(email);
 
     if (emailAlreadyExists) {

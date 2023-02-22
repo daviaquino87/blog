@@ -1,5 +1,5 @@
-import { userBuilder } from "../repositories/in-memory/seed/UserSeed";
 import { User } from "./User";
+import { userBuilder } from "@modules/users/repositories/in-memory/seed/UserSeed";
 
 describe("User", () => {
   it("should be able possible to create a new user", () => {

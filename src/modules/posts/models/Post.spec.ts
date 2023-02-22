@@ -1,5 +1,5 @@
-import { postBuilder } from "../repositories/in-memory/seed/PostSeed";
 import { Post } from "./Post";
+import { postBuilder } from "@modules/posts/repositories/in-memory/seed/PostSeed";
 
 describe("Post", () => {
   it("should able possible to create a new post", () => {
