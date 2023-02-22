@@ -10,5 +10,6 @@ export const verifyError = (
   if (error instanceof AppError) {
     return response.status(error.statusCode).json({ info: error.message });
   }
+  console.log(error);
   return response.status(500).json({ error: "Internal error server!" });
 };
