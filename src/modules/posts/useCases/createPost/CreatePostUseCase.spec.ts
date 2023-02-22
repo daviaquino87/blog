@@ -1,4 +1,4 @@
-import { PostRepositoryInMemory } from "../../repositories/in-memory/PostRepository";
+import { PostRepositoryInMemory } from "../../repositories/in-memory/PostRepositoryInMemory";
 import { CreatePostUseCase } from "./CreatePostUseCase";
 import { postBuilder } from "../../repositories/in-memory/seed/PostSeed";
 
