@@ -16,4 +16,8 @@ export class TypeormUser {
 
   @Column({ type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
   created_at: Date;
+
+  constructor(id: string) {
+    this.id = id;
+  }
 }
