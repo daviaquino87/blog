@@ -4,7 +4,7 @@ import { AuthUserUseCase } from "./AuthUserUseCase";
 import { AppError } from "@errors/AppError";
 
 export class AuthUserController {
-  async handler(request: Request, response: Response) {
+  async handler(request: Request, response: Response): Promise<Response> {
     const { email, password } = request.body;
 
     if (!email || !password) {
