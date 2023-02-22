@@ -7,4 +7,5 @@ export interface IPostRepository {
   listPosts(): Promise<Post[]>;
   findPostByUser(userId: string, postId: string): Promise<Post>;
   updatePost({ userId, postId, title, content }: IUpdatePostDTO): Promise<void>;
+  dropPost(userId: string, postId: string): Promise<void>;
 }

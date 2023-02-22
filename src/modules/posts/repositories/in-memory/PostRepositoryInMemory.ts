@@ -40,4 +40,11 @@ export class PostRepositoryInMemory implements IPostRepository {
     post.title = title ?? post.title;
     post.content = content ?? post.content;
   }
+  async dropPost(userId: string, postId: string): Promise<void> {
+    const index = this.posts.findIndex(
+      (post) => post.userId === userId && post.id === postId
+    );
+
+    this.posts.splice(index, 1);
+  }
 }
