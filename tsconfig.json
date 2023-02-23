@@ -19,5 +19,6 @@
       "@errors/*": ["errors/*"],
       "@helpers/*": ["helpers/*"]
     }
-  }
+  },
+  "exclude": ["node_modules"]
 }
