@@ -8,6 +8,5 @@ const createPostController = new CreatePostController();
 const listPostController = new ListPostController();
 export const postRouter = Router();
 
-postRouter.use(ensureAuthenticate);
 postRouter.post("/", createPostController.handle);
 postRouter.get("/", listPostController.handle);
