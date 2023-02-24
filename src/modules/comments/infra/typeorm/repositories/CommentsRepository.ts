@@ -34,7 +34,6 @@ export class CommentRepository implements ICommentRepository {
 
   async findCommentUser(userId: string, commentId: string): Promise<Comment> {
     const comment = await this.repository.findOneBy({ userId, id: commentId });
-    console.log(comment);
     if (!comment) {
       return null;
     }

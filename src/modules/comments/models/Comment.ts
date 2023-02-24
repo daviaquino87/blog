@@ -16,7 +16,7 @@ export class Comment {
     props: Replace<ICommentProps, { created_at?: Date }>,
     id?: string
   ) {
-    this._id = randomUUID() ?? id;
+    this._id = id ?? randomUUID();
     this.props = { ...props, created_at: props.created_at ?? new Date() };
   }
 
