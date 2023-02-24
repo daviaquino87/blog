@@ -2,6 +2,7 @@ import { Router } from "express";
 import { userRouter } from "./user.routes";
 import { authRouter } from "./auth.routes";
 import { postRouter } from "./post.routes";
+import { commentRouter } from "./comment.routes";
 import { ensureAuthenticate } from "../middlewares/ensureAuthenticate";
 
 export const indexRouter = Router();
@@ -14,3 +15,4 @@ indexRouter.use("/user", userRouter);
 indexRouter.use("/auth", authRouter);
 indexRouter.use(ensureAuthenticate);
 indexRouter.use("/post", postRouter);
+indexRouter.use("/comment", commentRouter);
