@@ -21,8 +21,6 @@ describe("Comment", () => {
       await createCommentUseCase.execute(create);
     });
 
-    console.log(commentRepositoryInMemory.comments);
-
     const comments = await listCommentUseCase.execute("example-post id");
 
     expect(Array.isArray(comments)).toBe(true);
