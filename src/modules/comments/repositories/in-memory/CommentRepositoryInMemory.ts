@@ -19,8 +19,9 @@ export class CommentRepositoryInMemory implements ICommentRepository {
 
     this.comments.push(comment);
   }
-  async listComments(): Promise<Comment[]> {
-    return this.comments;
+
+  async listComments(postId: string): Promise<Comment[]> {
+    return this.comments.filter((comment) => comment.postId === postId);
   }
 
   async findCommentUser(userId: string, commentId: string): Promise<Comment> {

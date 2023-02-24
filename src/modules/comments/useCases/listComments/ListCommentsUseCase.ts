@@ -7,7 +7,7 @@ export class ListCommentsUseCase {
     @inject("commentRepository") private commentsRepository: ICommentRepository
   ) {}
 
-  async execute(): Promise<Comment[]> {
-    return await this.commentsRepository.listComments();
+  async execute(postId: string): Promise<Comment[]> {
+    return await this.commentsRepository.listComments(postId);
   }
 }

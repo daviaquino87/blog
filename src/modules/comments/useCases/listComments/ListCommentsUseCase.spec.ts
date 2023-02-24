@@ -17,10 +17,13 @@ describe("Comment", () => {
   });
   it("should able to possible list all comments", async () => {
     faker.forEach(async (comment) => {
-      await createCommentUseCase.execute(comment);
+      const create = { ...comment, postId: "example-post id" };
+      await createCommentUseCase.execute(create);
     });
 
-    const comments = await listCommentUseCase.execute();
+    console.log(commentRepositoryInMemory.comments);
+
+    const comments = await listCommentUseCase.execute("example-post id");
 
     expect(Array.isArray(comments)).toBe(true);
     expect(comments[0].userId).toEqual(faker.shift().userId);

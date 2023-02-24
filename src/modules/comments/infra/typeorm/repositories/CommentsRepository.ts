@@ -23,8 +23,8 @@ export class CommentRepository implements ICommentRepository {
     await this.repository.save(comment);
   }
 
-  async listComments(): Promise<Comment[]> {
-    const data = await this.repository.find();
+  async listComments(postId: string): Promise<Comment[]> {
+    const data = await this.repository.findBy({ postId });
     const comments = data.map((comment) => {
       return TypeormCommentsMapper.toApplication(comment);
     });
