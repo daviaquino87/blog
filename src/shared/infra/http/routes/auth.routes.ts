@@ -5,4 +5,4 @@ const authUserController = new AuthUserController();
 
 export const authRouter = Router();
 
-authRouter.post("/", authUserController.handler);
+authRouter.post("/", authUserController.handle);

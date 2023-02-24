@@ -1,13 +1,17 @@
 import { IPostRepository } from "../../repositories/interface/IPostRepository";
 import { AppError } from "../../../../errors/AppError";
+import { inject, injectable } from "tsyringe";
 
 interface IRequest {
   userId: string;
   postId: string;
 }
 
+@injectable()
 export class DropPostUseCase {
-  constructor(private postRepository: IPostRepository) {}
+  constructor(
+    @inject("postRepository") private postRepository: IPostRepository
+  ) {}
   async execute({ userId, postId }: IRequest) {
     const post = await this.postRepository.findPostByUser(userId, postId);
 
