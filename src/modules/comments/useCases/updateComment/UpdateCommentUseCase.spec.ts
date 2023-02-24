@@ -21,7 +21,7 @@ describe("Comment", () => {
 
     const updateComment = {
       userId: comment.userId,
-      id: commentRepositoryInMemory.comments[0].id,
+      commentId: commentRepositoryInMemory.comments[0].id,
       text: "this is a new text",
     };
 
@@ -38,7 +38,7 @@ describe("Comment", () => {
 
     const updateComment = {
       userId: "incorrect-user-id",
-      id: commentRepositoryInMemory.comments[0].id,
+      commentId: commentRepositoryInMemory.comments[0].id,
       text: "this is a new text",
     };
 

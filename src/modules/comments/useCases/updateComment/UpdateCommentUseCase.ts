@@ -2,12 +2,19 @@ import { ICommentRepository } from "@modules/comments/repositories/interface/ICo
 import { IUpdateCommentDTO } from "@modules/comments/dtos/IUpdateCommentDTO";
 
 import { AppError } from "@errors/AppError";
+import { inject, injectable } from "tsyringe";
 
+@injectable()
 export class UpdateCommentUseCase {
-  constructor(private commentsRepository: ICommentRepository) {}
+  constructor(
+    @inject("commentRepository") private commentsRepository: ICommentRepository
+  ) {}
 
-  async execute({ userId, id, text }: IUpdateCommentDTO): Promise<void> {
-    const comment = await this.commentsRepository.findCommentUser(userId, id);
+  async execute({ userId, commentId, text }: IUpdateCommentDTO): Promise<void> {
+    const comment = await this.commentsRepository.findCommentUser(
+      userId,
+      commentId
+    );
 
     if (!comment) {
       throw new AppError(
@@ -15,6 +22,6 @@ export class UpdateCommentUseCase {
       );
     }
 
-    await this.commentsRepository.updateComment({ id, text });
+    await this.commentsRepository.updateComment({ commentId, text });
   }
 }

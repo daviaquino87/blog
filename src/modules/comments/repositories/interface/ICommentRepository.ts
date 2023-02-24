@@ -6,6 +6,6 @@ export interface ICommentRepository {
   create({ userId, postId, text }: ICreateCommentDTO): Promise<void>;
   listComments(): Promise<Comment[]>;
   findCommentUser(userId: string, commentId: string): Promise<Comment>;
-  updateComment({ userId, id, text }: IUpdateCommentDTO): Promise<void>;
+  updateComment({ userId, commentId, text }: IUpdateCommentDTO): Promise<void>;
   removeComment(userId: string, commentId: string): Promise<void>;
 }

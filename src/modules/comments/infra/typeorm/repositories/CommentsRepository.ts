@@ -25,7 +25,6 @@ export class CommentRepository implements ICommentRepository {
 
   async listComments(): Promise<Comment[]> {
     const data = await this.repository.find();
-
     const comments = data.map((comment) => {
       return TypeormCommentsMapper.toApplication(comment);
     });
@@ -35,7 +34,7 @@ export class CommentRepository implements ICommentRepository {
 
   async findCommentUser(userId: string, commentId: string): Promise<Comment> {
     const comment = await this.repository.findOneBy({ userId, id: commentId });
-
+    console.log(comment);
     if (!comment) {
       return null;
     }
@@ -43,8 +42,12 @@ export class CommentRepository implements ICommentRepository {
     return TypeormCommentsMapper.toApplication(comment);
   }
 
-  async updateComment({ userId, id, text }: IUpdateCommentDTO): Promise<void> {
-    const comment = await this.repository.findOneBy({ userId, id });
+  async updateComment({
+    userId,
+    commentId,
+    text,
+  }: IUpdateCommentDTO): Promise<void> {
+    const comment = await this.repository.findOneBy({ userId, id: commentId });
 
     await this.repository.update(comment, {
       text,

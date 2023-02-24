@@ -23,6 +23,7 @@ export class TypeormCommentsMapper {
         userId: comment.userId,
         postId: comment.postId,
         text: comment.text,
+        created_at: comment.created_at,
       },
       comment.id
     );

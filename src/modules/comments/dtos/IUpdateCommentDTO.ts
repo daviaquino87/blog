@@ -1,5 +1,5 @@
 export interface IUpdateCommentDTO {
   userId?: string;
-  id: string;
+  commentId: string;
   text: string;
 }
