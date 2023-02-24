@@ -27,4 +27,8 @@ export class TypeormPost {
   @ManyToOne(() => TypeormUser)
   @JoinColumn({ name: "userId" })
   user: TypeormUser;
+
+  constructor(id: string) {
+    this.id = id;
+  }
 }
