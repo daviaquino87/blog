@@ -1,5 +1,5 @@
 import { Replace } from "@helpers/Replace";
-import { randomUUID } from "node:crypto";
+import { v4 as uuidV4 } from "uuid";
 
 interface IUserProps {
   name: string;
@@ -13,7 +13,7 @@ export class User {
   private props: IUserProps;
 
   constructor(props: Replace<IUserProps, { created_at?: Date }>, id?: string) {
-    this._id = id ?? randomUUID();
+    this._id = id ?? uuidV4();
     this.props = { ...props, created_at: props.created_at ?? new Date() };
   }
 

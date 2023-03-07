@@ -1,5 +1,5 @@
 import { Replace } from "@helpers/Replace";
-import { randomUUID } from "node:crypto";
+import { v4 as uuidV4 } from "uuid";
 
 interface ICommentProps {
   userId: string;
@@ -16,7 +16,7 @@ export class Comment {
     props: Replace<ICommentProps, { created_at?: Date }>,
     id?: string
   ) {
-    this._id = id ?? randomUUID();
+    this._id = id ?? uuidV4();
     this.props = { ...props, created_at: props.created_at ?? new Date() };
   }
 
